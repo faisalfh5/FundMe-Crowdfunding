@@ -20,18 +20,21 @@ A fungible token is one in which all 'parts' of the token are the same. Exchangi
 
 NFTs are examples of Non-Fungible Tokens (more on this later) where each token is different from a different token.
 
-What is Open Zippelin
+#What is Open Zippelin
 This line imports the ERC-20 token standard from OpenZeppelin (OZ). OZ is an Ethereum security company. Among other things, OZ develops reference contracts for popular smart contract standards which are thoroughly tested and secure. Whenever implementing a smart contract which needs to comply with a standard, try to find an OZ reference implementation rather than rewriting the entire standard from scratch.
 
 You can look at the implementation of ERC-20 standard contract if you want by following the link - https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol
 
+```
 how to use openzeppelin contract on your project
 npm init -y
 npm install @openzeppelin/contracts
-check on dependencies
+```
 
-cat package.json
-main think in ERC20 Token
+-> check on dependencies
+-> cat package.json
+-> main think in ERC20 Token
+
 _mint is an internal function within the ERC20 standard contract, which means that it can only be called by the contract itself. External users cannot call this function.
 
 Since you as the developer want to receive some tokens when you deploy this contract, we call the _mint function to mint some tokens to msg.sender.
@@ -42,7 +45,8 @@ msg.sender is a global variable injected by the Ethereum Virtual Machine, which 
 
 10 * 10 ** 18 specifies that you want 10 full tokens to be minted to your address.
 
-Note: You might be wondering why we did not just write 10 in the amount, instead of 10 ** 18 (which is actually 10 ^ 18).
+#Note
+You might be wondering why we did not just write 10 in the amount, instead of 10 ** 18 (which is actually 10 ^ 18).
 
 Essentially, Solidity does not support floating point numbers - that is decimals. Also, since ERC20 tokens deal with money, using floating point numbers is a bad idea.
 
