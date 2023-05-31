@@ -37,7 +37,6 @@ export const navlink = [
   {
     name: "logout",
     imgUrl: logout,
-    link: "/",
-    disabled: true,
+    link: "/showCampaign",
   },
 ];

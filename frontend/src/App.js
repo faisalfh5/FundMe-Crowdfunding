@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
@@ -16,7 +15,7 @@ import {
 } from "./components";
 import Voting from "./components/Voting";
 import Cordion from "./components/Cordion";
-
+import ShowCampaign from "./components/ShowCampaign";
 const App = () => {
   return (
     <>
@@ -85,6 +84,7 @@ const App = () => {
             }
           />
           <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path="/showCampaign" element={<ShowCampaign />} />
         </Routes>
       </BrowserRouter>
     </>
