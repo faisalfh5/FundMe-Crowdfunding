@@ -7,7 +7,6 @@ import {
   Category,
   Milestone,
   Exploreprojects,
-  Contactfrom,
   Footer,
   Loginsign,
   Projects,
@@ -32,8 +31,11 @@ const App = () => {
                 <Category />
                 <Milestone />
                 <Cordion />
+                <br />
+                <br />
+
                 <Exploreprojects />
-                <Contactfrom />
+                <br />
                 <Footer />
               </>
             }

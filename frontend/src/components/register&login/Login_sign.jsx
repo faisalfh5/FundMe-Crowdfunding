@@ -1,9 +1,25 @@
 import { React, useEffect, useState } from "react";
 import * as Components from "../register&login/index";
 import "../../cssfiles/login.css";
-
+import api from "../../api/index";
 const Loginsign = () => {
   const [signIn, toggle] = useState(true);
+  const [user, setUser] = useState({
+    username: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser({ ...user, [name]: value });
+  };
+
+  console.log("usernmae", user.username);
+
   return (
     <>
       <div className="main">
@@ -11,14 +27,30 @@ const Loginsign = () => {
           <Components.SignUpContainer signinIn={signIn}>
             <Components.Form>
               <Components.Title>Create Account</Components.Title>
-              <Components.Input type="text" placeholder="Name" />
+              <Components.Input
+                name="username"
+                value={user.user}
+                type="text"
+                placeholder="Username"
+                onChange={handleChange}
+              />
+              <Components.Input
+                name="firstName"
+                value={user.firstName}
+                type="text"
+                placeholder="First Name"
+                onChange={handleChange}
+              />
+              <Components.Input
+                type="text"
+                name="lastName"
+                value={user.lastName}
+                placeholder="Last Name"
+                onChange={handleChange}
+              />
               <Components.Input type="email" placeholder="Email" />
               <Components.Input type="password" placeholder="Password" />
-              <Components.Input type="text" placeholder="Wallet Address" />
-              <div class="radio-buttons">
-                <input type="radio" name="user" value="user" /> User &nbsp;
-                <input type="radio" name="user" value="invester" /> Investor
-              </div>
+              <Components.Input type="text" placeholder="Confirm Password" />
               <Components.Button>Sign Up</Components.Button>
             </Components.Form>
           </Components.SignUpContainer>
