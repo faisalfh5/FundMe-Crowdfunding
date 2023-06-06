@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from "react";
+import { React, useState } from "react";
 import * as Components from "../register&login/index";
 import "../../cssfiles/login.css";
 import api from "../../api/index";
@@ -22,7 +22,7 @@ const Loginsign = () => {
 
   return (
     <>
-      <div className="main">
+      <div className="main" id="login">
         <Components.Container>
           <Components.SignUpContainer signinIn={signIn}>
             <Components.Form>
