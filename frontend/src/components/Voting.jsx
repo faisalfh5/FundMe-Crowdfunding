@@ -5,7 +5,7 @@ import Exploreproject from "../components/Exploreprojects";
 const Voting = () => {
   return (
     <>
-      <div className="relative sm:-8 p-4  min-h-screen flex flex-row">
+      <div className="relative sm:-8 p-4  min-h-screen flex flex-row ">
         <div className="sm:flex hidden mr-10 relative">
           <Sidebar />
         </div>
@@ -13,27 +13,27 @@ const Voting = () => {
           <Navbar_dash />
           <Exploreproject />
 
-          <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-            <div class="mx-auto max-w-lg text-center">
-              <h1 class="text-2xl font-bold sm:text-3xl">Make Payment</h1>
+          <div className="mx-auto max-w-screen-md px-4 py-16 sm:px-6 lg:px-8 bg-slate-100 mt-20">
+            <div className="mx-auto max-w-lg text-center">
+              <h1 className="text-2xl font-bold sm:text-3xl">Make Payment</h1>
 
-              <p class="mt-4 text-gray-500">
+              <p className="mt-4 text-gray-500">
                 Blockchain-based crowdfunding offers direct and efficient
                 payments, eliminating the need for intermediaries and ensuring
                 secure transactions.
               </p>
             </div>
 
-            <form action="" class="mx-auto mb-0 mt-8 max-w-md space-y-4 ">
+            <form action="" className="mx-auto mb-0 mt-8 max-w-md space-y-4 ">
               <div>
-                <label for="text" class="sr-only">
+                <label for="text" className="sr-only">
                   Address
                 </label>
 
-                <div class="relative">
+                <div className="relative">
                   <input
                     type="text"
-                    class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                    className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                     placeholder="Enter Your Wallet Address"
                   />
 
@@ -49,7 +49,7 @@ const Voting = () => {
               </div>
 
               <div>
-                <label for="number" class="sr-only">
+                <label for="number" className="sr-only">
                   Payment
                 </label>
 

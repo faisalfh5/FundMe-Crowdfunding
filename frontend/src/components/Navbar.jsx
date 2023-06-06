@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { ethers } from "ethers";
 import { Link } from "react-router-dom";
 import "../App.css";
 import "../cssfiles/responsivefront.css";
@@ -8,6 +9,7 @@ import ScrollToTop from "react-scroll-to-top";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import metaMask from "./connectors/metaMask";
 
 const Navbar = () => {
   const [active, Setactive] = useState("Home");
@@ -21,6 +23,9 @@ const Navbar = () => {
   });
 
   const open = Boolean(anchorEl);
+  const [walletAddress, setWalletAddress] = useState("");
+  const [connect, setConnect] = useState(false);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -28,7 +33,30 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
+  const handlesubmit = async () => {
+    await metaMask(setWalletAddress);
+    console.log("metmask return", walletAddress);
+    // setWalletAddress(addr);
+    setConnect(true);
+  };
+
   const route = window.location.pathname;
+  async function getAddress() {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const addr = await signer.getAddress();
+    setWalletAddress(addr);
+    if (addr) {
+      setConnect(true);
+    }
+  }
+  useEffect(() => {
+    // const val = window.ethereum.isConnected();
+    // if (val) {
+    console.log("here");
+    getAddress();
+    // }
+  }, [walletAddress.length]);
 
   return (
     <>
@@ -119,8 +147,11 @@ const Navbar = () => {
                   textAlign: "left",
                   width: "150px",
                 }}
+                onClick={handlesubmit}
               >
-                Connect Wallet
+                {connect === true
+                  ? walletAddress.substring(0, 11) + "..."
+                  : "Connect Wallet"}
               </button>
             </div>
             <div className="clear"></div>

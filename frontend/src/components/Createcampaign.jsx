@@ -6,9 +6,12 @@ import { checkIfImage } from "../utils/index";
 import { money } from "../assets";
 import CustomButton from "../dashboard/CustomButton";
 import FormField from "../components/FormField";
+import { addCampaign } from "../Web3/contractFunction";
+import uploadFilesToPinata from "../Web3/pinata";
 
 const Createcampaign = () => {
   const navigate = useNavigate();
+  const [allData, setAllData] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   //  const {createCampaign} = useStateContext();
   const [form, setForm] = useState({
@@ -23,30 +26,41 @@ const Createcampaign = () => {
   const handleFormFieldChange = (fieldName, e) => {
     setForm({ ...form, [fieldName]: e.target.value });
   };
-
-  const handleSubmit = (e) => {
+  const handlePinata = async (e) => {
+    // console.log("file", e.target.value);
+    await uploadFilesToPinata(e.target.files[0]);
+  };
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(form);
+    console.log("handlesubmit?");
 
-    checkIfImage(form.image, async (exists) => {
-      if (exists) {
-        setIsLoading(true);
-        await Createcampaign({
-          ...form,
-          target: ethers.utils.parseUnits(form.target, 18),
-        });
-        setIsLoading(false);
-        navigate("/");
-      } else {
-        alert("Provide valid image URL");
-        setForm({ ...form, image: "" });
-      }
-    });
+    await addCampaign(
+      form.name,
+      form.title,
+      form.description,
+      form.target,
+      form.deadline,
+      form.image
+    );
+    // checkIfImage(form.image, async (exists) => {
+    //   if (exists) {
+    //     setIsLoading(true);
+    //     await Createcampaign({
+    //       ...form,
+    //       target: ethers.utils.parseUnits(form.target, 18),
+    //     });
+    //     setIsLoading(false);
+    //     navigate("/");
+    //   } else {
+    //     alert("Provide valid image URL");
+    //     setForm({ ...form, image: "" });
+    //   }
+    // });
   };
   return (
     <>
       {/* <div style={{width:"90%", marginTop:"-550px" , marginLeft:"120px",marginBottom:"50px"}}> */}
-      <div className="bg-[#1c1c24] flex justify-center items-center flex-col rounded-rounded-[10px] sm:p-10 p-4">
+      <div>
         {isLoading && "Loader......"}
 
         <div className="flex justify-center items-center p-[16px] sm:min-w-[380px] bg-[#3a3a43] rounded-[10px]">
@@ -55,10 +69,7 @@ const Createcampaign = () => {
           </h1>
         </div>
 
-        <form
-          onSubmit={handleSubmit}
-          className="w-full mt-[65px] flex flex-col gap-[30px]"
-        >
+        <form className="w-full mt-[65px] flex flex-col gap-[30px]">
           <div className="flex flex-wrap gap-[40px]">
             <FormField
               LableName="Your Name *"
@@ -72,7 +83,6 @@ const Createcampaign = () => {
               LableName="Campaign TItle *"
               placeholder="Write a title "
               inputType="text"
-              value={form.title}
               handleChange={(e) => handleFormFieldChange("title", e)}
             />
           </div>
@@ -91,8 +101,7 @@ const Createcampaign = () => {
               className="w-[40px] h-[40px] object contain"
             />
             <h4 className="font-epilogue font-bold text-[25p] text-white ml-[20px]">
-              {" "}
-              You will get 100% of the raised amount{" "}
+              You will get 100% of the raised amount
             </h4>
           </div>
 
@@ -104,7 +113,6 @@ const Createcampaign = () => {
               value={form.target}
               handleChange={(e) => handleFormFieldChange("target", e)}
             />
-
             <FormField
               LableName="End Date *"
               placeholder="End Date "
@@ -112,15 +120,26 @@ const Createcampaign = () => {
               value={form.deadline}
               handleChange={(e) => handleFormFieldChange("deadline", e)}
             />
+            <div>
+              <br />
+              <br />
 
-            <FormField
-              LableName="Campaign image *"
-              placeholder="Place image URL of your campaign"
-              inputType="url"
-              value={form.image}
-              handleChange={(e) => handleFormFieldChange("image", e)}
-            />
-            <div className="flex justify-center items-center mt-[40px]">
+              <label for="profile_pic">Choose file to upload &nbsp;</label>
+              <input
+                type="file"
+                id="profile_pic"
+                name="profile_pic"
+                accept=".jpg, .jpeg, .png"
+                value={allData}
+                onChange={handlePinata}
+              />
+            </div>
+
+            <div
+              className="flex justify-center items-center mt-[40px]"
+              // style={}
+              onClick={handleSubmit}
+            >
               <CustomButton
                 btnType="submit"
                 title="Submit new campaign"

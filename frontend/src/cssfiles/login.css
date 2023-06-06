@@ -1,0 +1,9 @@
+.radio-buttons input[type="radio"] {
+  display: inline-block;
+}
+
+.radio-buttons {
+  white-space: nowrap;
+  margin-right: 40%;
+  margin-bottom: 5%;
+}

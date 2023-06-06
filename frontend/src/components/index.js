@@ -15,6 +15,7 @@ import Navbar_dash from "../dashboard/Navbar_dash";
 import Dashboard from "../dashboard/Dashboard";
 import FormField from "./FormField";
 import Createcampaign from "./Createcampaign";
+import ShowCampaign from "./ShowCampaign";
 export {
   Navbar,
   Herosection,
@@ -33,4 +34,5 @@ export {
   Sidebar,
   FormField,
   Createcampaign,
+  ShowCampaign,
 };

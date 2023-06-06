@@ -29,7 +29,7 @@ const Sidebar = () => {
 
   return (
     <div className="flex justify-between items-center flex-col   sticky top-5 h-[92vh]">
-      <Link to="/voting">
+      <Link to="/">
         <Icon styles="w-[59px]   h-[52px]  bg-[#f3f3f8]" imgUrl={dash_logo} />
       </Link>
 

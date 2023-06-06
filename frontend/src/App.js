@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
@@ -8,7 +7,6 @@ import {
   Category,
   Milestone,
   Exploreprojects,
-  Contactfrom,
   Footer,
   Loginsign,
   Projects,
@@ -16,7 +14,7 @@ import {
 } from "./components";
 import Voting from "./components/Voting";
 import Cordion from "./components/Cordion";
-
+import ShowCampaign from "./components/ShowCampaign";
 const App = () => {
   return (
     <>
@@ -33,8 +31,11 @@ const App = () => {
                 <Category />
                 <Milestone />
                 <Cordion />
+                <br />
+                <br />
+
                 <Exploreprojects />
-                <Contactfrom />
+                <br />
                 <Footer />
               </>
             }
@@ -85,6 +86,7 @@ const App = () => {
             }
           />
           <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path="/showCampaign" element={<ShowCampaign />} />
         </Routes>
       </BrowserRouter>
     </>
