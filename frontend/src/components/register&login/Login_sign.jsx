@@ -1,9 +1,11 @@
-import { React, useState } from "react";
+import { React, useState, toast } from "react";
 import * as Components from "../register&login/index";
 import "../../cssfiles/login.css";
 import api from "../../api/index";
+
 const Loginsign = () => {
   const [signIn, toggle] = useState(true);
+  // const nav = useNavigate();
   const [user, setUser] = useState({
     username: "",
     firstName: "",
@@ -13,12 +15,32 @@ const Loginsign = () => {
     confirmPassword: "",
   });
 
+  const handleContinue = () => {
+    // e.prevantDefault();
+    console.log("got here?");
+    api("post", "users/", {
+      username: user?.username,
+      first_name: user?.firstName,
+      last_name: user?.lastName,
+      email: user?.email,
+      password: user?.password,
+      confirmPassword: user?.confirmPassword,
+    })
+      .then(() => {
+        toast.success("User Created");
+        // nav("/#");
+      })
+      .catch((err) => {
+        toast.error(err);
+      });
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
 
-  console.log("usernmae", user.username);
+  console.log("usernmae", user);
 
   return (
     <>
@@ -48,10 +70,29 @@ const Loginsign = () => {
                 placeholder="Last Name"
                 onChange={handleChange}
               />
-              <Components.Input type="email" placeholder="Email" />
-              <Components.Input type="password" placeholder="Password" />
-              <Components.Input type="text" placeholder="Confirm Password" />
-              <Components.Button>Sign Up</Components.Button>
+              <Components.Input
+                name="email"
+                value={user.email}
+                placeholder="Email"
+                onChange={handleChange}
+              />
+              <Components.Input
+                type="password"
+                name="password"
+                value={user.password}
+                placeholder="Password"
+                onChange={handleChange}
+              />
+              <Components.Input
+                type="password"
+                placeholder="Confirm Password"
+                name="confirmPassword"
+                value={user.confirmPassword}
+                onChange={handleChange}
+              />
+              <button type="submit" onClick={handleContinue}>
+                Sign Up
+              </button>
             </Components.Form>
           </Components.SignUpContainer>
           <Components.SignInContainer signinIn={signIn}>

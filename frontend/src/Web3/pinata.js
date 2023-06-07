@@ -83,7 +83,7 @@ const Secret =
   "c2a42d3b262cf3996844c3527391592b315c4111ed9db38be0b185c0bbd5d13f";
 
 // eslint-disable-next-line consistent-return
-const uploadFilesToPinata = async (file) => {
+const uploadFilesToPinata = async (file, setAllData) => {
   console.log("file", file);
   try {
     // eslint-disable-next-line no-await-in-loop
@@ -105,7 +105,8 @@ const uploadFilesToPinata = async (file) => {
         }
       );
       if (response.status === 200) {
-        console.log("Ipfs images", response.data.IpfsHash);
+        console.log("Ipfs images");
+        setAllData(response.data.IpfsHash);
         console.log(
           "image url",
           `https://gateway.pinata.cloud/ipfs/${response.data.IpfsHash}`

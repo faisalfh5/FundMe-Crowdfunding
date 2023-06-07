@@ -14,6 +14,10 @@ import metaMask from "./connectors/metaMask";
 const Navbar = () => {
   const [active, Setactive] = useState("Home");
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const [walletAddress, setWalletAddress] = useState("");
+  const [connect, setConnect] = useState(false);
+
   jQuery(window).scroll(function () {
     if (jQuery(window).scrollTop() >= 10) {
       jQuery("#home").addClass("fixed-header ");
@@ -21,10 +25,6 @@ const Navbar = () => {
       jQuery("#home").removeClass("fixed-header");
     }
   });
-
-  const open = Boolean(anchorEl);
-  const [walletAddress, setWalletAddress] = useState("");
-  const [connect, setConnect] = useState(false);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);

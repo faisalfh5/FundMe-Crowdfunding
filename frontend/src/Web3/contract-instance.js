@@ -11,6 +11,7 @@ const fetchContract = async (signerorprovider) => {
     contratAbi.abi,
     signerorprovider
   );
+  console.log("fetching Contract Instance", instance);
   return instance;
 };
 
@@ -22,12 +23,6 @@ const getProviderOrSigner = async (needSigner = false) => {
   const connection = await web3modal.connect();
   const provider = new ethers.providers.Web3Provider(connection);
 
-  // // If user is not connected to the Goerli network, let them know and throw an error
-  // const { chainId } = await web3Provider.getNetwork();
-  // if (chainId !== 5) {
-  //   window.alert('Change the network to Goerli');
-  //   throw new Error('Change network to Goerli');
-  // }
   if (needSigner) {
     const signer = provider.getSigner();
     console.log("got signer", signer);

@@ -1,5 +1,5 @@
 {
-  "address": "0x9F3b1476eEc8D9364397Df5D3E0251A934aD09fd",
+  "address": "0xa8979D21A9E587da316371b0A9442216C4c6057b",
 
   "abi": [
     {
@@ -25,29 +25,18 @@
           "type": "uint256"
         },
         {
-          "internalType": "uint256",
+          "internalType": "string",
           "name": "_deadline",
-          "type": "uint256"
+          "type": "string"
         },
         {
           "internalType": "string",
           "name": "_image",
           "type": "string"
-        },
-        {
-          "internalType": "uint256",
-          "name": "initialSupply",
-          "type": "uint256"
         }
       ],
       "name": "createCampaign",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
+      "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
     },
@@ -90,37 +79,6 @@
     {
       "inputs": [
         {
-          "internalType": "uint256",
-          "name": "_id",
-          "type": "uint256"
-        }
-      ],
-      "name": "Invest_In_Campaign",
-      "outputs": [],
-      "stateMutability": "payable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_reqNum",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_id",
-          "type": "uint256"
-        }
-      ],
-      "name": "makePayment",
-      "outputs": [],
-      "stateMutability": "payable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
           "internalType": "address",
           "name": "_to",
           "type": "address"
@@ -140,19 +98,6 @@
       "inputs": [],
       "stateMutability": "nonpayable",
       "type": "constructor"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_reqNum",
-          "type": "uint256"
-        }
-      ],
-      "name": "voteRequest",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
     },
     {
       "inputs": [
@@ -204,9 +149,9 @@
           "type": "uint256"
         },
         {
-          "internalType": "uint256",
+          "internalType": "string",
           "name": "deadline",
-          "type": "uint256"
+          "type": "string"
         },
         {
           "internalType": "uint256",
@@ -254,9 +199,9 @@
               "type": "uint256"
             },
             {
-              "internalType": "uint256",
+              "internalType": "string",
               "name": "deadline",
-              "type": "uint256"
+              "type": "string"
             },
             {
               "internalType": "uint256",
@@ -276,11 +221,6 @@
             {
               "internalType": "address[]",
               "name": "donators",
-              "type": "address[]"
-            },
-            {
-              "internalType": "address[]",
-              "name": "investors",
               "type": "address[]"
             },
             {
@@ -324,22 +264,69 @@
     {
       "inputs": [
         {
-          "internalType": "uint256",
-          "name": "_id",
-          "type": "uint256"
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
         }
       ],
-      "name": "getInvestors",
+      "name": "getUserCampaigns",
       "outputs": [
         {
-          "internalType": "address[]",
+          "components": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "title",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "description",
+              "type": "string"
+            },
+            {
+              "internalType": "uint256",
+              "name": "target",
+              "type": "uint256"
+            },
+            {
+              "internalType": "string",
+              "name": "deadline",
+              "type": "string"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amountCollected",
+              "type": "uint256"
+            },
+            {
+              "internalType": "string",
+              "name": "image",
+              "type": "string"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokens",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address[]",
+              "name": "donators",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "donations",
+              "type": "uint256[]"
+            }
+          ],
+          "internalType": "struct FundMe.Campaign[]",
           "name": "",
-          "type": "address[]"
-        },
-        {
-          "internalType": "uint256[]",
-          "name": "",
-          "type": "uint256[]"
+          "type": "tuple[]"
         }
       ],
       "stateMutability": "view",
@@ -405,25 +392,12 @@
     },
     {
       "inputs": [],
-      "name": "no_of_investors",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
       "name": "numberOfCampaigns",
       "outputs": [
         {
-          "internalType": "uint256",
+          "internalType": "uint8",
           "name": "",
-          "type": "uint256"
+          "type": "uint8"
         }
       ],
       "stateMutability": "view",
