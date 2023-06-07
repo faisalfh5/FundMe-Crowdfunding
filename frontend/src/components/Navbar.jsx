@@ -83,16 +83,13 @@ const Navbar = () => {
                 >
                   Projects
                 </Link>
-                <Link
-                  to="/investing"
-                  className={route === "/investing" ? "active" : "none"}
-                  onClick={() => Setactive("investing")}
-                >
-                  Start Investing
-                </Link>
 
                 <Link
-                  to="/login"
+                  activeClass="active"
+                  spy={true}
+                  smooth={true}
+                  offset={70}
+                  duration={100}
                   className={route === "/login" ? "active" : "none"}
                   onClick={() => Setactive("login")}
                 >
@@ -124,12 +121,6 @@ const Navbar = () => {
                     "aria-labelledby": "basic-button",
                   }}
                 >
-                  <MenuItem onClick={handleClose}>
-                    <Link to="/">Donor</Link>
-                  </MenuItem>
-                  <MenuItem onClick={handleClose}>
-                    <Link to="/">Investor</Link>
-                  </MenuItem>
                   <MenuItem onClick={handleClose}>
                     <Link to="/Create-Campaign">Campaign Creator</Link>
                   </MenuItem>

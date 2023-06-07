@@ -43,21 +43,25 @@ export const navlinks = [
 
 export const categorylinks = [
   {
+    link: "https://builtin.com/blockchain",
     title: "Technology",
     imgsrc: Category_1,
     explanation: "Discover and explore the technology projects",
   },
   {
+    link: "https://everledger.io/how-fashion-brands-are-taking-advantage-of-blockchain-apparel/",
     title: "Fashion",
     imgsrc: Category_2,
     explanation: "Discover and explore the fashion projects",
   },
   {
+    link: "https://pharmaphorum.com/digital/blockchain-healthcare-electronic-medical-records",
     title: "Medical",
     imgsrc: Category_3,
     explanation: "Discover and explore the medical projects",
   },
   {
+    link: "https://elearningindustry.com/ways-blockchain-impacts-education-industry-in-2022-and-beyond",
     title: "Education",
     imgsrc: Category_4,
     explanation: "Discover and explore the education projects",
@@ -95,27 +99,22 @@ export const Accordionque = [
   {
     question: " How will you collect information on your donors",
     answer:
-      "In ad velit in ex nostrud dolore cupidatat consecteturea in ut nostrud velit in irure cillum tempor laborissed adipisicing eu esse duis nulla non",
+      "Blockchain technology can be used to create decentralized and transparent systems for collecting and managing donor information. ",
   },
   {
     question: " What fees will you pay?",
     answer:
-      "In ad velit in ex nostrud dolore cupidatat consecteturea in ut nostrud velit in irure cillum tempor laborissed adipisicing eu esse duis nulla non",
+      "When you send a transaction on a blockchain network, such as transferring cryptocurrency or executing a smart contract, you may need to pay a transaction fee.",
   },
   {
     question: " Is this platform is secured?",
     answer:
-      "In ad velit in ex nostrud dolore cupidatat consecteturea in ut nostrud velit in irure cillum tempor laborissed adipisicing eu esse duis nulla non",
+      "Blockchain technology, in general, is known for its inherent security features such as immutability, decentralization, and cryptographic protocols.",
   },
   {
     question: " What fundraising support will the platform offer?",
     answer:
-      "In ad velit in ex nostrud dolore cupidatat consecteturea in ut nostrud velit in irure cillum tempor laborissed adipisicing eu esse duis nulla non",
-  },
-  {
-    question: " What fundraising support will the platform offer?",
-    answer:
-      "In ad velit in ex nostrud dolore cupidatat consecteturea in ut nostrud velit in irure cillum tempor laborissed adipisicing eu esse duis nulla non",
+      " The platform can provide a secure and convenient way for donors to make online donations. It may offer various payment options, such as credit/debit cards, bank transfers, or cryptocurrency, to cater to different donor preferences.",
   },
 ];
 

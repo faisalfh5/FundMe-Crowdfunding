@@ -33,7 +33,6 @@ const Herosection = () => {
           </h2>
           <p className="txtcolor">Raising Money Has Never Been So Easy.</p>
           <Link to="/Create-Campaign">
-            {" "}
             <button className="common-btn">Start a project</button>
           </Link>
         </div>
