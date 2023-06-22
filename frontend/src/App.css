@@ -88,7 +88,10 @@ p {
   border: 2px solid #3b3456 !important;
   border-radius: 20% !important;
 }
-
+#login {
+  border: 2px solid #3b3456 !important;
+  border-radius: 20% !important;
+}
 .border {
   border: 2px solid #fff;
 }
@@ -119,30 +122,26 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  float: left;
-  width: 80%;
-  padding-top: 1%;
-}
-
-.cnt-info-col {
-  text-align: center;
-  width: 20%;
-  margin-top: 2%;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 400;
-  font-family: Rubik;
-  transition: all 0.5s ease;
+  width: 100%;
 }
 
 .logo {
-  float: left;
-  width: 30%;
+  width: 10%;
+  
 }
 
 .menu {
-  float: right;
-  width: 70%;
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cnt-info-col {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .logo img {
@@ -196,9 +195,13 @@ section.header-bg-parent {
 }
 
 .header-col1 {
-  float: left;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: space-between;
   width: 50%;
   position: absolute;
+  height: 50%;
   top: 30%;
   left: 11%;
 }
@@ -216,6 +219,7 @@ section.header-bg-parent {
   box-shadow: 0 0 15px #3b3456;
   height: 100vh;
   width: 100%;
+  background-color: red;
 }
 
 .header-col1 h5 {

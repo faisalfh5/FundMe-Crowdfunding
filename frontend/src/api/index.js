@@ -6,7 +6,9 @@ import { baseUrl } from "../config";
 const api = async (method, uri, body) => {
   // API Call
   const url = baseUrl + uri;
+  console.log("api url", url);
   const token = localStorage.getItem("token");
+  console.log("local token", token);
   if (token) {
     axios.defaults.headers = {
       Authorization: `Bearer ${token}`,
@@ -18,6 +20,7 @@ const api = async (method, uri, body) => {
       .then((res) => resolve(res))
       .catch((err) => {
         if (err?.response?.status === 403) {
+          console.log("got error here ?");
           localStorage.removeItem("token");
           window.location = "/login";
         } else {
@@ -32,6 +35,5 @@ const api = async (method, uri, body) => {
   });
 };
 
-//
 // Export
 export default api;
