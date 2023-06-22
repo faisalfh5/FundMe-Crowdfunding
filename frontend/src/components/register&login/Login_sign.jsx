@@ -15,16 +15,15 @@ const Loginsign = () => {
     confirmPassword: "",
   });
 
-  const handleContinue = () => {
-    // e.prevantDefault();
+  const handleContinue = (e) => {
+    e.preventDefault();
     console.log("got here?");
     api("post", "users/", {
-      username: user?.username,
-      first_name: user?.firstName,
-      last_name: user?.lastName,
+      name: user?.firstName,
+      lname: user?.lastName,
       email: user?.email,
       password: user?.password,
-      confirmPassword: user?.confirmPassword,
+      confirmpassword: user?.confirmPassword,
     })
       .then(() => {
         toast.success("User Created");
@@ -33,6 +32,21 @@ const Loginsign = () => {
       .catch((err) => {
         toast.error(err);
       });
+  };
+
+  const handleSign = async (e) => {
+    e.preventDefault();
+    console.log("user.email", user.email);
+    console.log("user.password", user.password);
+    const res = await api("post", "auth/login", {
+      email: user?.email,
+      password: user?.password,
+    });
+    console.log("Res0", res);
+    if (res.status == 200) {
+      console.log("res token", res.data.token);
+      localStorage.setItem(res.data.token);
+    }
   };
 
   const handleChange = (e) => {
@@ -44,18 +58,12 @@ const Loginsign = () => {
 
   return (
     <>
-      <div className="main" id="login">
+      <div className="main">
         <Components.Container>
           <Components.SignUpContainer signinIn={signIn}>
-            <Components.Form>
+            <Components.Form onSubmit={handleContinue}>
               <Components.Title>Create Account</Components.Title>
-              <Components.Input
-                name="username"
-                value={user.user}
-                type="text"
-                placeholder="Username"
-                onChange={handleChange}
-              />
+
               <Components.Input
                 name="firstName"
                 value={user.firstName}
@@ -90,20 +98,32 @@ const Loginsign = () => {
                 value={user.confirmPassword}
                 onChange={handleChange}
               />
-              <button type="submit" onClick={handleContinue}>
+              <Components.Button type="submit" onClick={handleContinue}>
                 Sign Up
-              </button>
+              </Components.Button>
             </Components.Form>
           </Components.SignUpContainer>
           <Components.SignInContainer signinIn={signIn}>
             <Components.Form>
               <Components.Title>Sign in</Components.Title>
-              <Components.Input type="email" placeholder="Email" />
-              <Components.Input type="password" placeholder="Password" />
+              <Components.Input
+                type="email"
+                placeholder="Email"
+                value={user.email}
+                onChange={handleChange}
+              />
+              <Components.Input
+                type="password"
+                placeholder="Password"
+                value={user.password}
+                onchange={handleChange}
+              />
               <Components.Anchor href="#">
                 Forgot your password?
               </Components.Anchor>
-              <Components.Button>Sigin In</Components.Button>
+              <Components.Button onClick={handleSign}>
+                Sign In
+              </Components.Button>
             </Components.Form>
           </Components.SignInContainer>
           <Components.OverlayContainer signinIn={signIn}>

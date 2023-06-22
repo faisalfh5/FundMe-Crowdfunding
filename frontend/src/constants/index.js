@@ -8,6 +8,7 @@ import {
   Portfolio3,
   Portfolio4,
 } from "../assets";
+
 export const navlinks = [
   {
     id: "home",

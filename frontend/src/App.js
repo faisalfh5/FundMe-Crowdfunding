@@ -45,11 +45,10 @@ const App = () => {
             path="/login"
             element={
               <>
-                <Navbar />
-
-                <Herosection />
+                {/* <Navbar />
+                <Herosection /> */}
                 <Loginsign />
-                <Footer />
+                {/* <Footer /> */}
               </>
             }
           />
