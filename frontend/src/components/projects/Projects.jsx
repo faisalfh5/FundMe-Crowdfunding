@@ -4,14 +4,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../../App.css";
 import { Portfolio1 } from "../../assets";
 import { Card, Button } from "react-bootstrap";
+import { getallCampaign } from "../../Web3/contractFunction";
 
 const Projects = () => {
   // const [isEdit, setIsEdit] = useState();
-  // const fetch = () => {};
+  const [tx, setTx] = useState();
+  const fetchData = async () => {
+    console.log("here");
+    const tx = await getallCampaign();
+    console.log("tx---", tx);
+    setTx(tx);
+  };
+  useEffect(() => {
+    fetchData();
+  });
+  console.log("settx record", tx);
 
-  // useEffect = () => {
-  //   fetch();
-  // };
   return (
     <>
       <div className="layout">

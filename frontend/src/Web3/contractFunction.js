@@ -50,12 +50,25 @@ export const addCampaign = async (
 export const getCampaign = async (walletAddress, setTxData) => {
   try {
     const mintInstance = await getProviderOrSigner();
-    console.log("provider", mintInstance);
+    console.log("fn provider", mintInstance);
 
     const trans = await mintInstance.getUserCampaigns(walletAddress);
     console.log("Fn trans", trans);
     // setEmployeeData(trans);
     setTxData(trans);
+  } catch (error) {
+    console.log("Something went wrong to intetract with smart contract");
+  }
+};
+
+export const getallCampaign = async () => {
+  try {
+    const mintInstance = await getProviderOrSigner();
+    console.log("provider", mintInstance);
+
+    const trans = await mintInstance.getCampaigns();
+    console.log("Fn trans", trans);
+    return trans;
   } catch (error) {
     console.log("Something went wrong to intetract with smart contract");
   }

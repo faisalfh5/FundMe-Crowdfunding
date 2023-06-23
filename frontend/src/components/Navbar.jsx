@@ -47,7 +47,6 @@ const Navbar = () => {
 
   const route = window.location.pathname;
 
-  console.log("nav rount", route);
   async function getAddress() {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();

@@ -20,19 +20,20 @@ const ShowCampaign = () => {
     const fetch = async () => {
       console.log("here");
       await getAddress();
+      return;
     };
 
     fetch();
-  }, [walletAddress.length]);
+  }, [walletAddress.length !== 0]);
 
   useEffect(() => {
     const fetchData = async () => {
       console.log("here");
-      await getCampaign(walletAddress, setTxData);
+      return await getCampaign(walletAddress, setTxData);
     };
 
     fetchData();
-  }, [walletAddress.length]);
+  }, [walletAddress.length !== 0]);
 
   console.log("txData", TxData);
   console.log("Wallet Address", walletAddress);
@@ -42,7 +43,7 @@ const ShowCampaign = () => {
       <div className="sm:flex hidden mr-10 relative">
         <Sidebar />
       </div>
-      {TxData.map((item, index) => {
+      {/* {TxData?.map((item, index) => {
         return (
           <div className="flex-1 max-sm:w-full max-w-[1280px] mx-auto sm:pr-5">
             <div className="main-content">
@@ -98,7 +99,7 @@ const ShowCampaign = () => {
             </button>
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 };
