@@ -19,13 +19,17 @@ const Navbar = () => {
   const [walletAddress, setWalletAddress] = useState("");
   const [connect, setConnect] = useState(false);
 
-  jQuery(window).scroll(function () {
-    if (jQuery(window).scrollTop() >= 10) {
-      jQuery("#home").addClass("fixed-header ");
+  const scroll = () => {
+    if (
+      route === "/projects" ||
+      route === "/login" ||
+      jQuery(window).scrollTop() >= 10
+    ) {
+      jQuery("#home").addClass("fixed-header");
     } else {
       jQuery("#home").removeClass("fixed-header");
     }
-  });
+  };
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -43,6 +47,7 @@ const Navbar = () => {
 
   const route = window.location.pathname;
 
+  console.log("nav rount", route);
   async function getAddress() {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
@@ -57,8 +62,9 @@ const Navbar = () => {
     // if (val) {
     console.log("here");
     getAddress();
+    scroll();
     // }
-  }, [!walletAddress.length]);
+  });
 
   return (
     <>
@@ -106,7 +112,7 @@ const Navbar = () => {
               onClick={handleClick}
             >
               <Link
-                className={route === "/login" ? "active" : "none"}
+                className={route === "/Dashboard" ? "active" : "none"}
                 onClick={() => Setactive("login")}
               >
                 Dashboard

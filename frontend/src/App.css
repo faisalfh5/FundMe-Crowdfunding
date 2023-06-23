@@ -55,9 +55,16 @@
 
 .container {
   max-width: 1330px;
-  margin: 0 auto;
+  margin: auto;
   padding-left: 15px;
   padding-right: 15px;
+  /* background-color: black; */
+}
+
+.count-col {
+  float: right;
+  width: 50%;
+  /* background-color: red; */
 }
 
 a {
@@ -105,9 +112,8 @@ p {
 .fixed-header {
   position: fixed;
   width: 100%;
-  z-index: 99;
-  left: 0;
-  top: 0;
+  /* z-index: 99; */
+ 
   background-color: #3b3456;
   box-shadow: 10px 10px 20px #fff;
   border-radius: 1px solid white;
@@ -123,6 +129,7 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  
 }
 
 .logo {
@@ -219,7 +226,6 @@ section.header-bg-parent {
   box-shadow: 0 0 15px #3b3456;
   height: 100vh;
   width: 100%;
-  background-color: red;
 }
 
 .header-col1 h5 {
@@ -360,10 +366,7 @@ button.common-btn:hover {
   padding-top: 100px;
 }
 
-.count-col {
-  float: right;
-  width: 50%;
-}
+
 
 .stat {
   float: left;

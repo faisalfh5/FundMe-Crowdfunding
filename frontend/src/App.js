@@ -45,10 +45,8 @@ const App = () => {
             path="/login"
             element={
               <>
-                {/* <Navbar />
-                <Herosection /> */}
+                <Navbar />
                 <Loginsign />
-                {/* <Footer /> */}
               </>
             }
           />
@@ -77,10 +75,7 @@ const App = () => {
             element={
               <>
                 <Navbar />
-
-                <Herosection />
                 <Projects />
-                <Footer />
               </>
             }
           />
