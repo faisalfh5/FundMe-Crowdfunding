@@ -1,0 +1,914 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@1,200&family=Roboto:wght@100&family=Rubik&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dot {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot a {
+  text-decoration: none;
+  color: black;
+}
+
+/*Common clasess*/
+
+#mobile-menu {
+  display: none;
+}
+
+.clear {
+  clear: both;
+}
+
+.common-h5 {
+  color: #3b3456;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 7px;
+}
+
+.common-h2 {
+  color: #3b3456;
+  font-size: 30px;
+  line-height: 38px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1330px;
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  /* background-color: black; */
+}
+
+.count-col {
+  float: right;
+  width: 50%;
+  /* background-color: red; */
+}
+
+a {
+  font-family: "Rubik";
+  font-weight: 400;
+}
+
+.active {
+  color: #f47514 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nunito";
+  font-weight: 700;
+}
+
+p {
+  font-family: "Rubik";
+  font-weight: 400;
+}
+
+#arrow {
+  border: 2px solid #3b3456 !important;
+  border-radius: 20% !important;
+}
+#login {
+  border: 2px solid #3b3456 !important;
+  border-radius: 20% !important;
+}
+.border {
+  border: 2px solid #fff;
+}
+/**
+* ----------------------------------------------
+* Header Start
+* ----------------------------------------------
+**/
+/* header*/
+
+.fixed-header {
+  position: fixed;
+  width: 100%;
+  /* z-index: 99; */
+ 
+  background-color: #3b3456;
+  box-shadow: 10px 10px 20px #fff;
+  border-radius: 1px solid white;
+}
+
+header {
+  z-index: 1;
+  position: relative;
+}
+
+.nav-col {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo {
+  width: 10%;
+
+}
+
+.menu {
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cnt-info-col {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo img {
+  width: 180px;
+}
+
+.menu a {
+  text-decoration: none;
+  padding: 22px;
+  display: inline-block;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+
+.menu a:hover {
+  color: #f47514;
+}
+
+.cnt-info-col Button {
+  background: linear-gradient(90deg, #7c74d3, #3b3456);
+  letter-spacing: 0.5px;
+  padding: 3% 4%;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: "Nunito";
+  font-weight: 800;
+  cursor: pointer;
+  /* margin: 20px 0px; */
+  transition: all 0.5s ease;
+}
+.cnt-info-col Button:hover {
+  background: linear-gradient(180deg, #6759e8, #8b81ef);
+}
+/**
+* ----------------------------------------------
+* Header End
+* ----------------------------------------------
+**/
+
+/**
+* ----------------------------------------------
+* Hero Section Start
+* ----------------------------------------------
+**/
+section.header-bg-parent {
+  position: relative;
+  top: -83px;
+}
+
+.header-col1 {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  position: absolute;
+  height: 50%;
+  top: 30%;
+  left: 11%;
+}
+
+.header-col1 .txtcolor {
+  color: #fff;
+}
+
+.header-col2 {
+  float: right;
+  background-image: url(../src/assets/hero.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 0 15px #3b3456;
+  height: 100vh;
+  width: 100%;
+}
+
+.header-col1 h5 {
+  color: #3b3456;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.header-col1 h2 {
+  color: #3b3456;
+  font-size: 60px;
+}
+
+.header-col1 h2 {
+  color: #3b3663;
+  font-size: 60px;
+  line-height: 43px;
+  margin: 21px 0px 15px;
+}
+
+.header-col1 p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  margin: 20px 0px 0px;
+}
+
+button.common-btn {
+  background: linear-gradient(90deg, #8b81ef, #3b3663);
+  letter-spacing: 0.5px;
+  padding: 15px 30px;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: "Nunito";
+  font-weight: 800;
+  cursor: pointer;
+  margin: 20px 0px;
+  transition: all 0.5s ease;
+}
+
+button.common-btn:hover {
+  background: linear-gradient(180deg, #6759e8, #8b81ef);
+}
+
+/*  */
+
+.hedaer-bg-par-img {
+  position: absolute;
+  bottom: -110px;
+}
+
+/**
+* ----------------------------------------------
+*Hero End
+* ----------------------------------------------
+**/
+
+/**
+* ----------------------------------------------
+* category Start
+* ----------------------------------------------
+**/
+/*category par*/
+
+.category-col-par {
+  background-color: #ffffff;
+  padding: 80px 0px;
+  margin-top: 40px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.category-col {
+  background-color: #fff;
+  padding: 30px;
+  width: 23%;
+  float: left;
+  margin-right: 1%;
+  margin-left: 1%;
+  box-shadow: 2px 2px 10px #fefefe;
+  border-radius: 13px;
+  transition: all 0.5s ease;
+  height: 265px;
+  border: 1px solid #3b3663;
+}
+
+.category-col:hover {
+  background-color: #3b3663;
+}
+
+.category-col:hover h3 {
+  color: #fff;
+}
+
+.category-col:hover h4 {
+  color: #fff;
+}
+
+.category-col h3 {
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.category-col img {
+  width: 50%;
+  height: 50%;
+  margin: 30px 0px;
+}
+
+.category-col h4 {
+  font-size: 14px;
+  font-family: "Rubik", sans-serif;
+  color: #4d4d4d;
+  margin-bottom: 20px;
+}
+
+/**
+* ----------------------------------------------
+* category End
+* ----------------------------------------------
+**/
+
+/**
+* ----------------------------------------------
+* Why choose us start
+* ----------------------------------------------
+**/
+/*why choose us */
+
+.why-choose-col {
+  float: left;
+  width: 50%;
+  padding-top: 100px;
+}
+
+
+
+.stat {
+  float: left;
+  width: 30%;
+}
+
+.stat-info-par {
+  float: right;
+  width: 70%;
+}
+
+.why-choose-col p {
+  color: #3b3663;
+  font-size: 16px;
+  line-height: 28px;
+  font-family: "Rubik";
+  font-weight: 400;
+  padding: 13px 100px 0px 0px;
+}
+
+.milestone-counter {
+  margin: 25px;
+}
+
+.highlight {
+  color: #3b3663;
+  padding-top: 20px;
+  font-family: "Nunito";
+  font-weight: 800;
+  font-size: 56px;
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+
+.highlight:after {
+  content: "+";
+  color: #f47a14;
+  position: absolute;
+  top: 1px;
+  right: 10px;
+  font-size: 30px;
+}
+
+.stat-info-div p {
+  color: #3b3663;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Rubik";
+  padding: 20px 0px;
+}
+
+.stat-info-sub-par {
+  margin: 50px 0px 40px;
+}
+
+.stat-info-div {
+  position: relative;
+}
+
+.stat-info-div:before {
+  content: "s";
+  border-left: 1px solid #ddd;
+  position: absolute;
+  height: 85px;
+  font-size: 0;
+  left: -14px;
+}
+
+section#why-choose-us {
+  margin-top: 60px;
+}
+/**
+* ----------------------------------------------
+* Why choose us End
+* ----------------------------------------------
+**/
+
+/**
+* ----------------------------------------------
+* Milestone section start
+* ----------------------------------------------
+**/
+/*Milestone section */
+.milestone-col-par {
+  background-color: #3b3456;
+  padding: 6% 0px;
+  /* margin-top: 20px; */
+}
+.wrapcontainer {
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: 1.9%;
+  padding-right: 1%;
+}
+.milestone-col {
+  background-color: #fff;
+  width: 23%;
+  float: left;
+  margin-right: 1%;
+  margin-left: 1%;
+  box-shadow: 1px 1px 5px #fefefe;
+  border-radius: 13px;
+  transition: all 0.5s ease;
+  height: 30%;
+  border: 1px solid #3b3663;
+}
+
+.milestone-col h3 {
+  font-size: 100%;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.milestone-img-responsive {
+  display: block;
+  max-width: 60%;
+  margin-left: 20%;
+}
+
+.milestone-col:hover {
+  background-color: #3b3663;
+}
+
+.milestone-col:hover h3 {
+  color: #fff;
+}
+
+.milestone-col:hover h4 {
+  color: #fff;
+}
+
+.milestone-colh3 {
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.milestone-colimg {
+  width: 50%;
+  height: 50%;
+  margin: 30px 0px;
+}
+
+.milestone-col h4 {
+  font-size: 14px;
+  font-family: "Rubik", sans-serif;
+  color: #4d4d4d;
+  margin-bottom: 20px;
+}
+
+/**
+* ----------------------------------------------
+* Milestone section End
+* ----------------------------------------------
+**/
+
+/**
+* ----------------------------------------------
+* Question Answering
+* ----------------------------------------------
+**/
+/*faq*/
+
+section#faq-par {
+  margin-top: 60px;
+}
+
+.faq-que-col {
+  float: left;
+  width: 47%;
+  margin-top: 80px;
+  margin-left: -10px;
+}
+
+.faq-bg-col {
+  float: right;
+  width: 50%;
+}
+
+.faq-que-col h2 {
+  color: #f47a14;
+}
+/**
+* ----------------------------------------------
+* Demo styles
+* ----------------------------------------------
+**/
+.accordion {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+.accordion__item + .accordion__item {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+  background-color: #ffff;
+  color: grey;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+}
+
+.accordion__button:hover {
+  background: linear-gradient(90deg, #543cb6, #7c74d3);
+  color: white;
+}
+
+.accordion__button:before {
+  display: inline-block;
+  content: "";
+  height: 10px;
+  width: 10px;
+  margin-right: 12px;
+  border-bottom: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded="true"]::before,
+.accordion__button[aria-selected="true"]::before {
+  transform: rotate(45deg);
+}
+
+[hidden] {
+  display: none;
+}
+
+.accordion__panel {
+  padding: 20px;
+  animation: fadein 0.35s ease-in;
+}
+
+/* -------------------------------------------------- */
+/* ---------------- Animation part ------------------ */
+/* -------------------------------------------------- */
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.faq-img-par {
+  position: relative;
+}
+
+.faq-img-info {
+  position: absolute;
+  top: 210px;
+  left: 80px;
+  color: #fff;
+}
+
+.faq-img-info a {
+  color: #fff;
+  text-decoration: none;
+  padding-top: 20px;
+  display: inline-block;
+}
+
+.faq-img-info h2 {
+  font-size: 40px;
+  font-family: "Nunito";
+  font-weight: 800;
+  line-height: 55px;
+}
+
+.faq-img-info .fa-lightbulb-o {
+  font-size: 70px;
+  padding-bottom: 20px;
+}
+
+.faq-img-info p {
+  font-size: 18px;
+  font-family: "Rubik";
+  line-height: 28px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+div#faq-accordion h3 {
+  margin-top: 5px;
+}
+
+div#faq-accordion {
+  margin-top: 35px;
+}
+
+/**
+* ----------------------------------------------
+* Question Answering end
+* ----------------------------------------------
+**/
+
+/**
+* ----------------------------------------------
+* Projects section start
+* ----------------------------------------------
+**/
+
+.card {
+  border: 1px solid #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  height: 50%;
+  margin-top: 2%;
+}
+
+.slick-slide > div {
+  margin: 0 10px;
+}
+
+.slick-list {
+  margin: 0 -10px;
+}
+
+.card-top h1 {
+  font-size: 1rem;
+  margin: 10px 20px;
+}
+
+.card-top > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Appp {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.card-bottom {
+  margin: 10px 20px;
+}
+.categoryy {
+  position: relative;
+}
+
+section#project {
+  position: relative;
+}
+
+#project:before {
+  position: absolute;
+  left: 7%;
+}
+
+/**
+* ----------------------------------------------
+* Projects section End
+* ----------------------------------------------
+**/
+
+/**
+* ----------------------------------------------
+* Contact section End
+* ----------------------------------------------
+**/
+
+/*contact*/
+
+#contact {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../src//assets/homecontact-bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 150px 0px;
+  margin-top: 2%;
+}
+
+.form-par {
+  background-image: linear-gradient(20deg, #f47a14 0%, #f47a14 57%);
+  padding: 30px 40px;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.form-com {
+  width: 100%;
+  height: 40px;
+  margin: 10px 0px;
+  padding: 10px 10px;
+}
+
+.form-par h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 800;
+  font-family: "Nunito";
+  margin-bottom: 25px;
+}
+
+.submit-btn {
+  color: #fff;
+  border: none;
+  background-image: linear-gradient(180deg, #059dde 0%, #1a2e84 100%);
+  padding: 14px 40px;
+  margin: 20px auto 0px;
+  display: block;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.submit-btn:hover {
+  background-image: linear-gradient(180deg, #1a2e84 0%, #059dde 100%);
+}
+
+.footer-col {
+  float: left;
+  width: 30%;
+  margin-right: 3%;
+  margin-top: 45px;
+}
+
+.footer-2-col {
+  position: relative;
+  left: 110px;
+}
+
+.footer-col h3 {
+  color: #3b3663;
+  font-family: "Nunito";
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.footer-col p {
+  color: #696687;
+  font-size: 16px;
+  font-family: "Rubik";
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.footer-col i {
+  color: #fff;
+  background-color: #3b3456;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.social-icons-footer i:hover {
+  transform: translateY(-10px);
+}
+
+.footer-col.footer-2-col ul li {
+  color: #696687;
+  font-family: "Rubik";
+  font-size: 16px;
+  padding-bottom: 10px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.footer-col.footer-2-col ul li:hover {
+  padding-left: 5px;
+}
+
+.footer-col.footer-2-col ul {
+  list-style: none;
+}
+
+.footer-col span {
+  color: #696687;
+  text-decoration: none;
+  padding-left: 10px;
+}
+
+.footer-col span {
+  padding-left: 10px;
+}
+
+p.copyright-footer {
+  text-align: center;
+  font-family: "Rubik";
+  padding: 20px 0px;
+}
+/* . */
+
+hr.footer-hr {
+  margin: 60px 0px 20px;
+}
+
+.main-content {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content {
+  width: 70%;
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 30%;
+}
+.descriptions p {
+  display: flex;
+  margin-top: 2%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.images {
+  width: 50%;
+  margin-top: 4%;
+}
+.side h1 {
+  margin-left: 53%;
+  margin-top: -35%;
+  color: rgb(15, 122, 90);
+  font-size: 25px;
+  font-weight: bold;
+}
+.sides h1 {
+  margin-left: 53%;
+  margin-top: -35%;
+  color: rgb(15, 122, 90);
+  font-size: 25px;
+  font-weight: bold;
+}
+button {
+  margin-top: 4%;
+}
